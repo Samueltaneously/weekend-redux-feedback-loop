@@ -1,6 +1,5 @@
 import { useSelector, } from 'react-redux';
 import { useHistory } from 'react-router-dom'
-const pool = require('../modules/pool');
 import axios from 'axios';
 
 
@@ -13,17 +12,25 @@ function ReviewPage() {
 
     const history = useHistory();
 
+
+
     const handleSubmit = () => {
 
-        axios.post('/', (req, res) => {
-            pool.query(`INSERT INTO "reviews" ("feeling", "understanding", "supported", "comments")
-                VALUES ($1, $2, $3, $4)`, [feeling, understanding, supported, comments]);
-        }).catch((error) => {
-            res.sendStatus(500);
-        });
-        history.push('/')
-    }
+        let review = {
+            feeling,
+            understanding,
+            supported,
+            comments
+        }
 
+        axios.post('/review', review)
+            .then(response => {
+            }).catch((error) => {
+                error.sendStatus(500);
+            });
+        history.push('/')
+
+    }
 
 
     return (
