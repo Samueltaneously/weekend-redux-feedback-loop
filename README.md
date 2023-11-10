@@ -1,9 +1,9 @@
-# Project Name
+# Project
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Weekend Challenge **weekend-redux-feedback-loop** from Prime Academy
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+*What problem did you solve? How did you solve it?*
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+In this assignment, I developed a multi-part feedback form using React and Redux. The form consisted of four views, each corresponding to a different aspect of the feedback: Each form part had its own route, and the user navigated through the steps by clicking the "Next" button. Input validation was implemented to ensure that users could only advance to the next step if a valid score was provided, with informative prompts guiding users to input values. The final step, the Review component, allowed users to review their feedback before submission. Once submitted, the feedback was stored in the database, and users received a confirmation of the submission success. This project addressed the challenge of managing state across multiple views using Redux.
